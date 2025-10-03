@@ -5,6 +5,7 @@ module "lambda_function" {
   description   = "Used by AWS Config to check for secret keys in lambda functions"
   handler       = "lambda_has_no_secrets.lambda_handler"
   runtime       = "python3.8"
+  memory_size   = 128
   timeout       = 10
   publish       = true
   source_path   = "${path.module}/src/lambda_has_no_secrets.py"
