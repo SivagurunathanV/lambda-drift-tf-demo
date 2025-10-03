@@ -6,6 +6,7 @@ module "lambda_function" {
   handler       = "lambda_has_no_secrets.lambda_handler"
   runtime       = "python3.8"
   timeout       = 10
+  memory_size   = 128
   publish       = true
   source_path   = "${path.module}/src/lambda_has_no_secrets.py"
   allowed_triggers = {
